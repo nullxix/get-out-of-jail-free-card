@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#sign-in-container{
+
+}
+
+#sign-in-header{
+    width: 200px;
+    height: 45px;
+
+    position: relative;
+    top: 0px;
+
+    font-family: Oxygen;
+    background-color: #F1EBEB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2E093A;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px 0px #00000025;
+
+    cursor: pointer;
+    transition: .1s;
+}
+
+#sign-in-header:active{
+    top: 2px;
+    background-color: #d8d2d2;
+    box-shadow: 0px 3px 3px 0px #00000025;
+}
