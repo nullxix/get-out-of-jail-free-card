@@ -1,0 +1,13 @@
+endpoints
+
+/api/register
+
+register a new person,
+put all info in the req body under 'data'
+
+{
+    "data" : {
+        "item1" : "stuff",
+        "item2" : "stuff"
+    }
+}

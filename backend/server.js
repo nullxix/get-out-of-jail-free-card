@@ -4,6 +4,7 @@ const dotenv = require('dotenv').config()
 const apiHandler = require('./api/interfaces.js')
 const {PORT} = process.env
 
+app.use(express.json())
 app.get('/', (req, res, next) => {
     res.send('WE ARE HERE')
 })
