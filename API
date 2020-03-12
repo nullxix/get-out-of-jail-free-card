@@ -1,0 +1,41 @@
+IF IT DOESN'T WORK:
+TRY ADDING THIS HEADER TO ALL REQ:
+Content-Type = "application/json"
+
+ENDPOINTS
+
+/api/register
+
+register a new person,
+put all info in the req body under 'data'
+
+{
+    "data" : {
+        "name" : "stuff",
+        "social" : "stuff",
+        "bloodType" : "bluuud",
+        "email" : "me@me.com"
+    }
+}
+
+RETURNS {success:true, id: <user-id>}
+
+/api/confirm/
+
+confirm purchase, tell us who your hero is
+in body put 
+
+{
+    data: {
+        "id":<user-id>,
+        "hero":<hero>
+    }
+}
+
+RETURNS {
+    success: true, 
+    responseTime: [<minutes>, <seconds>],
+    hero: <hero-name>
+}
+OR
+{error:}
