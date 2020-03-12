@@ -5,7 +5,7 @@ const REGISTER = (req, res, next) => {
         db.saveRegistration(data)
         .then(result => {
             if (result.success){
-                res.send({success:true})
+                res.send(JSON.stringify({success:true, id: result.id}))
             }
         })
     }

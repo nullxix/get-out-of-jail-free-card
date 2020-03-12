@@ -9,15 +9,16 @@ const CONFIRM = (req, res, next) => {
             db.getUserAndUpdate(ID, hero)
             .then(result => {
                 if(result.success && result.user){
-                    res.send({
+                    const out = JSON.stringify({
                         success: true,
                         responseTime: [12, 32],
                         hero
                     })
+                    res.send(out)
                 } else {
-                    res.send({
+                    res.send(JSON.stringify({
                         error: 'invalid ID'
-                    })
+                    }))
                 }
             })
         } else {
