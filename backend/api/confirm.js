@@ -1,15 +1,18 @@
 const db = require('../db/interface.js')
 const CONFIRM = (req, res, next) => {
     return new Promise((fulfill, reject) => {
-        const ID = req.body.id
-    
+        const data = req.body.data;
+        const {ID, hero} = data || {ID: null, hero: null}
+
         console.log('receiving ID:', ID)
-        if(ID){
-            db.getUser(ID)
+        if(ID && hero){
+            db.getUserAndUpdate(ID, hero)
             .then(result => {
                 if(result.success && result.user){
                     res.send({
-                        success: true
+                        success: true,
+                        responseTime: [12, 32],
+                        hero
                     })
                 } else {
                     res.send({
@@ -17,7 +20,11 @@ const CONFIRM = (req, res, next) => {
                     })
                 }
             })
-        }  
+        } else {
+            res.end({
+                error: 'poorly formed request'
+            })
+        }
     })
 }
 

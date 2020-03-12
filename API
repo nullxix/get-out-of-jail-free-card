@@ -20,11 +20,22 @@ put all info in the req body under 'data'
 
 RETURNS {success:true, id: <user-id>}
 
-
 /api/confirm/
 
-confirm purchase
+confirm purchase, tell us who your hero is
 in body put 
+
 {
-    "id":<user-id>
+    data: {
+        "id":<user-id>,
+        "hero":<hero>
+    }
 }
+
+RETURNS {
+    success: true, 
+    responseTime: [<minutes>, <seconds>],
+    hero: <hero-name>
+}
+OR
+{error:}

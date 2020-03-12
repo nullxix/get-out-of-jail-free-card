@@ -19,10 +19,9 @@ const saveRegistration = (data) => {
     })
 }
 
-const getUser = (id) => {
+const getUserAndUpdate = (id, update) => {
     return new Promise((fulfill, reject) => {
-
-        User.findOne({_id: id})
+        User.findOneAndUpdate({_id: id}, update, {upsert: true})
         .then((error, user) => {
             if(error){
                 reject({success: false, error})
@@ -34,6 +33,6 @@ const getUser = (id) => {
 }
 const db = {
     saveRegistration,
-    getUser
+    getUserAndUpdate
 }
 module.exports = db
