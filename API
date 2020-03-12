@@ -1,4 +1,4 @@
-endpoints
+ENDPOINTS
 
 /api/register
 
@@ -7,7 +7,16 @@ put all info in the req body under 'data'
 
 {
     "data" : {
-        "item1" : "stuff",
-        "item2" : "stuff"
+        "name" : "stuff",
+        "social" : "stuff",
+        "bloodType" : "bluuud",
+        "email" : "me@me.com"
     }
 }
+
+RETURNS {success:true}
+
+
+/api/confirm
+
+confirm purchase

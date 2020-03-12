@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const dotenv = require('dotenv').config()
-const apiHandler = require('./api/interfaces.js')
+const apiHandler = require('./api/interface.js')
 const {PORT} = process.env
 
 app.use(express.json())
