@@ -5,6 +5,11 @@ const apiHandler = require('./api/interface.js')
 const {PORT} = process.env
 
 app.use(express.json())
+app.use('*', (req, res, next) => {
+    console.log(req.body)
+    next()
+})
+
 app.get('/', (req, res, next) => {
     res.send('WE ARE HERE')
 })

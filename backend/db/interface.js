@@ -14,12 +14,26 @@ const saveRegistration = (data) => {
         })
         newUser.save()
         .then(doc => {
-            fulfill({success: true})
+            fulfill({success: true, id: doc._id})
         })
     })
 }
 
+const getUser = (id) => {
+    return new Promise((fulfill, reject) => {
+
+        User.findOne({_id: id})
+        .then((error, user) => {
+            if(error){
+                reject({success: false, error})
+            } else {
+                fulfill({success: true, user})
+            }
+        })
+    })
+}
 const db = {
-    saveRegistration
+    saveRegistration,
+    getUser
 }
 module.exports = db

@@ -1,3 +1,7 @@
+IF IT DOESN'T WORK:
+TRY ADDING THIS HEADER TO ALL REQ:
+Content-Type = "application/json"
+
 ENDPOINTS
 
 /api/register
@@ -14,9 +18,13 @@ put all info in the req body under 'data'
     }
 }
 
-RETURNS {success:true}
+RETURNS {success:true, id: <user-id>}
 
 
-/api/confirm
+/api/confirm/
 
 confirm purchase
+in body put 
+{
+    "id":<user-id>
+}
